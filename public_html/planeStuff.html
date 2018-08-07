@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sam's Vue.js Site</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="app">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        v-for="type in aircraft"
+                    >
+                        The {{type.name}} is made by {{type.manufacturer}}, which originates in {{type.country}}.
+                    </li>
+                </ul>
+            </div>
+            <div id="emmet">
+                <div class="planes">
+                   <p class="planetext"><a href="" class="planelink"></a></p>               </div>
+           </div>
+           
+           
+       </div>
+        
+        
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+        <script>
+            var aircraft = new Vue({
+                el:'#app',
+                data: {
+                    aircraft: [
+                        {
+                            name: "Su-27 Flanker",
+                            manufacturer: "Sukhoi",
+                            country: "Russia"
+                        },
+                        {
+                            name: "Typhoon",
+                            manufacturer: "Eurofighter",
+                            country: "Europe"
+                        },
+                        {
+                            name: "Alouette III",
+                            manufacturer: "Aerospatiale",
+                            country: "France"
+                        },
+                        {
+                            name: "MiG-21 Fishbed",
+                            manufacturer: "Mikoyan-Gurevich",
+                            country: "Russia"
+                        },
+                        {
+                            name: "V-22 Osprey",
+                            manufacturer: "Bell Boeing",
+                            country: "USA"
+                        },
+                        {
+                            name: "L-39 Albatros",
+                            manufacturer: "Aero Vodochody",
+                            country: "Czechoslovakia"
+                        },
+                    ]
+                    
+                }
+            })
+            
+        </script>
+        
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -13,37 +13,84 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        
+        <div class="container wrapper">
+            <!-- CHAPTER 2 -->
+            <h1>Chapter 2</h1>
+            <div id="app">
+                <h2>Hello {{ message }}</h2>
 
-        <div id="app">
-            <h1>{{ message }}</h1>
+                <label for="name-input">Enter your name below</label>
+                <input id="name-input" v-model="message">
+
+            </div>
+
+            <h1>Chapter 3</h1>
+            <h2>v-show</h2>
+            
+            <div id="app2">
+                <h3 v-show='!message'>You must send a message for help!</h3>
+                <textarea v-model="message"></textarea>
+                <!-- v-show only displays its element if there is data for the given directive -->
+                <button v-show="message">
+                    Send word to allies for help!
+                </button>
+                <pre>
+                    {{ $data }}
+                </pre>
+            </div>
+            
+            <div class="app3">
+                <h1>Chapter 4</h1>
+                <h2>v-for</h2>
+                <h3>ranging v-for: v-for is "$value in $array" <strong>(opposite of php)</strong></h3>
+                <p>v-for is for loop. Multiplication table of 4:</p>
+                <ul class="list-group">
+                    <li v-for="i in 11" class="list-group-item">
+                        {{ i-1 }} times 4 equal {{ (i-1) * 4 }}
+                    </li>
+                </ul>
+            </div>
             
             
         </div>
-
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
         <script>
             new Vue({
                 el:'#app',
                 data: {
-                message: 'General Kenobi!'
-                    }
+                    message: 'Dave'
+                }
+            })
+        </script>
+        
+        <script>
+            new Vue ({
+                el:'#app2',
+                data: {
+                    message: 'Our king is dead! Send help!'
+                }
+            })
+        </script>
+        <script>
+            new Vue ({
+                el:'.app3',
             })
         </script>
         
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-
-       
     </body>
 </html>
